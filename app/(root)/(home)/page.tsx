@@ -4,8 +4,10 @@ const Home = () => {
   const now = new Date();
   
   // Create a new Date object for Pakistan Standard Time (PST)
-  const pstTime = new Date(now.toLocaleString('en-US', { timeZone: 'Asia/Karachi' }));
+  const pstTime = new Date(now.toLocaleString('en-US', { timeZone: 'Asia/Islamabad' }));
 
+
+  
   const time = pstTime.toLocaleTimeString('en-PK', { hour: '2-digit', minute: '2-digit' });
   const date = (new Intl.DateTimeFormat('en-PK', { dateStyle: 'full' })).format(pstTime);
 
