@@ -26,6 +26,9 @@ const Home = () => {
       <MeetingTypeList />
     </section>
   );
+
+
+  
 };
 
 export default Home;
