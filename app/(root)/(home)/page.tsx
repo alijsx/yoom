@@ -2,12 +2,12 @@ import MeetingTypeList from '@/components/MeetingTypeList';
 
 const Home = () => {
   const now = new Date();
+  
+  // Create a new Date object for Pakistan Standard Time (PST)
+  const pstTime = new Date(now.toLocaleString('en-US', { timeZone: 'Asia/Karachi' }));
 
-  // Manually adjust the time by subtracting 2 minutes
-  const adjustedTime = new Date(now.getTime() - 2 * 60 * 1000);
-
-  const time = adjustedTime.toLocaleTimeString('en-PK', { hour: '2-digit', minute: '2-digit' });
-  const date = (new Intl.DateTimeFormat('en-PK', { dateStyle: 'full' })).format(adjustedTime);
+  const time = pstTime.toLocaleTimeString('en-PK', { hour: '2-digit', minute: '2-digit' });
+  const date = (new Intl.DateTimeFormat('en-PK', { dateStyle: 'full' })).format(pstTime);
 
   return (
     <section className="flex size-full flex-col gap-5 text-white">
@@ -26,9 +26,6 @@ const Home = () => {
       <MeetingTypeList />
     </section>
   );
-
-
-  
 };
 
 export default Home;
